@@ -9,6 +9,10 @@ gem 'cancan'
 gem 'pg'
 gem 'bb-ruby'
 
+group :production do
+  gem 'newrelic_rpm'
+end
+
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
