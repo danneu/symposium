@@ -1,0 +1,31 @@
+.navbar
+  .navbar-inner
+    .container
+      %a.brand(href="/") Symposium
+      %ul.nav
+
+      - if current_user
+        .btn-group.pull-right
+          .buttons
+            %a.btn.btn-inverse(href="#{url_for current_user}")
+              %i.icon-white.icon-user
+              = current_user.username
+            = link_to "Logout",  destroy_user_session_path, class: %w[btn btn-inverse], method: "delete"
+        -#.userbox.pull-right.navbar-text
+          .btn-group
+            %a.btn.btn-inverse(href="#{url_for current_user}")
+              %i.icon-white.icon-user
+              = current_user.username
+            = link_to "Logout",  destroy_user_session_path, class: %w[btn btn-inverse], method: "delete"
+      - else
+        = form_tag new_user_session_path, class: %w[navbar-form pull-right] do
+          = text_field_tag "user[login]", nil, placeholder: "Username", class: "input-small"
+          = password_field_tag "user[password]", nil, placeholder: "Password", class: "input-small"
+          = hidden_field_tag "user[remember_me]", "1"
+          = submit_tag "Login", class: "btn btn-small"
+          -#= link_to "/register", class: "btn btn-small" do
+            -#%i.icon-plus-sign
+            -#Sign Up
+        .pull-right.navbar-text.navbar-signup
+          = link_to "Sign Up",  new_user_registration_path
+          or

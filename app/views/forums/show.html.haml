@@ -1,0 +1,28 @@
+- unless current_user
+  .well.welcome
+    %h2.brand Welcome,
+    %p Symposium is a simple forum made with Rails.
+    %p Log in with:
+    %ul
+      %li username: captain crunch
+      %li password: secret
+    .call-to-register
+      = link_to new_user_registration_path, class: %w[btn btn-danger] do
+        %i.icon-white.icon-user
+        Create an Account
+
+.page-header
+  %h1= @forum.name 
+
+= render "shared/forum_tabs"
+= render "forum_view_controls"
+
+%table.table.topics
+  %thead
+    %tr
+      %td= @forum.to_singular
+      %td Latest Post
+      %td Posts
+  %tbody
+    = render @topics
+  

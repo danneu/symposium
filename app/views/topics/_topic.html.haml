@@ -1,0 +1,11 @@
+%tr.topic
+  %td.topic-title
+    = link_to truncate(topic.title, length: 50, separator: " "), [@forum, topic]
+    .topic-creator by #{topic.creator.username}
+  %td.topic-created-at
+    = link_to "#{time_ago_in_words(topic.latest_post_at)} ago", [@forum, topic]
+    .latest_poster 
+      by
+      = topic.latest_post.creator.username
+  %td.topic-post-count= topic.posts.size
+

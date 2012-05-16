@@ -1,0 +1,5 @@
+- page_header "New #{@forum.to_singular}"
+- breadcrumbize link_to(@topic.forum.name, @topic.forum)
+
+= render "form"
+  

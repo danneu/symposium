@@ -1,0 +1,19 @@
+!!! 5
+%title Symposium
+= stylesheet_link_tag "application", :media => "all"
+%link(href='http://fonts.googleapis.com/css?family=Oleo+Script' rel='stylesheet' type='text/css')
+= csrf_meta_tags
+
+%body
+  = render "shared/navbar"
+  .container
+    = flash_messages
+    = breadcrumbs
+    - if content_for? :page_header
+      .page-header
+        %h1= yield :page_header
+    = yield 
+
+    %footer
+
+  = javascript_include_tag "application"

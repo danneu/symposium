@@ -1,0 +1,23 @@
+.row.post
+  .span2
+    .post-userbit
+      .post-creator
+        = link_to post.creator.username, post.creator
+      .post-avatar.hidden-phone
+        -#= image_tag "avatar.jpg"
+  .span10
+    .post-postbit
+      .post-meta
+        .post-created-at
+          = time_ago_in_words post.created_at
+          ago (#{post.id})
+      .post-body
+        = post.to_html
+      - if @topic.original_post == post and can? :manage, @topic
+        .post-controls
+          = link_to "Edit", edit_forum_topic_path(@topic.forum, @topic)
+          = link_to "Delete", [@topic.forum, @topic], method: :delete, confirm: "This kills the topic. Are you sure?"
+      - elsif can? :manage, post
+        .post-controls
+          = link_to "Edit", edit_topic_post_path(@topic, post)
+          = link_to "Delete", [@topic, post], method: :delete, confirm: "Are you sure?"

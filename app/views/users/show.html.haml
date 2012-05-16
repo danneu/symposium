@@ -1,0 +1,31 @@
+- page_header @user.username
+
+- if @user == current_user
+  .profile-controls
+    -#= link_to "Edit Account", edit_user_path(current_user), class: %w[btn btn-primary]
+    = link_to "Edit Account", edit_user_registration_path, class: %w[btn btn-primary]
+
+.row 
+  .span6
+    %table.table.table-condensed
+      %tbody
+        %tr
+          %td Latest Post:
+          %td
+            = time_ago_in_words @user.posts.last.created_at
+            ago
+        %tr
+          %td Joined:
+          %td
+            = time_ago_in_words @user.created_at
+            ago
+        %tr
+          %td Posts:
+          %td= @user.posts.size
+        - if @user == current_user
+          %tr
+            %td Email (hidden):
+            %td= @user.email
+  .span6
+    .well Avatars are not implemented yet.
+

@@ -1,0 +1,16 @@
+= form_for [@topic, @post], html: {class: "form-vertical form-topic"} do |f|
+
+  - if @post.errors.any? 
+    .alert.alert-error
+      #error_explanation
+        %h2
+          = pluralize(@post.errors.count, "error") 
+          prohibited this topic from being saved:
+        %ul
+          - @post.errors.full_messages.each do |msg|
+            %li= msg 
+
+  = f.text_area :body, rows: 5
+
+  .form-actions
+    = f.submit "Edit Post", class: %w[btn btn-primary]

@@ -1,0 +1,13 @@
+- page_header @topic.title
+- breadcrumbize link_to(@topic.forum.name, @topic.forum)
+
+-#= render "topic_view_controls"
+= render @posts
+
+- if current_user
+  %hr
+  .well
+    %h3 New Post
+    = form_for [@topic, @new_post], html: {class: "form-post"} do |f|
+      = render partial: "posts/field", locals: {f: f}
+      = f.submit class: %[btn btn-primary]

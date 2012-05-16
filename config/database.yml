@@ -1,0 +1,17 @@
+development:
+  host: localhost
+  adapter: postgresql
+  encoding: unicode
+  database: symposium_dev
+  pool: 5
+  username: postgres
+  password: postgres
+
+test:
+  host: localhost
+  adapter: postgresql
+  encoding: unicode
+  database: symposium_test
+  pool: 5
+  username: postgres
+  password: postgres

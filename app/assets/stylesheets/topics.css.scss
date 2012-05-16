@@ -1,0 +1,14 @@
+.topic-view-controls {
+  text-align: right;
+}
+.topics {
+  tr:hover {
+      background-color: inherit;
+  }
+  &>* {
+    &:hover {
+      background-color: inherit;
+    }
+  }
+  margin-bottom: 10px;
+}

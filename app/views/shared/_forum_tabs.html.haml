@@ -1,0 +1,27 @@
+%ul.nav.nav-tabs#forum-tabs
+  %li{class: params[:id].to_i == 1 ? "active" : ""}
+    = link_to root_path do
+      %i.icon-white.icon-question-sign
+      Debates 
+  %li{class: params[:id].to_i == 2 ? "active" : ""}
+    = link_to forum_path(2) do
+      %i.icon-white.icon-comment
+      Off-Topic
+  %li{class: params[:id].to_i == 3 ? "active" : ""}
+    = link_to forum_path(3) do
+      %i.icon-white.icon-heart
+      Introductions
+
+
+
+-#%ul.nav.nav-tabs#forum-tabs
+  -#- Forum.all.each do |forum|
+    -#%li{:class => forum == @forum ? "active" : ""}
+      -#%a{:href => forum_path(forum)}
+        -#- if forum.id == 1
+          -#%i.icon-white.icon-heart
+        -#- if forum.id == 2
+          -#%i.icon-white.icon-question-sign
+        -#- if forum.id == 3
+          -#%i.icon-white.icon-comment
+        -#= forum.name

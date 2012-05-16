@@ -1,0 +1,24 @@
+= form_for [@forum, @topic], html: {class: "form-vertical form-topic"} do |f|
+
+  - if @topic.errors.any? 
+    .alert.alert-error
+      #error_explanation
+        %h2
+          = pluralize(@topic.errors.count, "error") 
+          prohibited this topic from being saved:
+        %ul
+          - @topic.errors.full_messages.each do |msg|
+            %li= msg 
+
+  = f.label :title
+  = f.text_field :title
+
+  = f.fields_for :posts, @first_post do |post|
+    = post.label :body, "First Post"
+    = render partial: "posts/field", locals: {f: post}
+
+  .form-actions
+    - if params[:action] == "edit"
+      = f.submit "Update #{@forum.to_singular}", class: %w[btn btn-primary]
+    - elsif params[:action] == "new"
+      = f.submit "Create #{@forum.to_singular}", class: %w[btn btn-primary]

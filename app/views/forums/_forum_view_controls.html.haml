@@ -1,0 +1,4 @@
+.forum-view-controls
+  = link_to new_forum_topic_path(@forum), class: %w[btn btn-primary] do
+    %i.icon-plus.icon-white
+    New #{@forum.to_singular}

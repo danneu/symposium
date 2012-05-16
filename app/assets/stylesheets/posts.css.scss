@@ -1,0 +1,41 @@
+@import "compass/layout/stretching";
+@import "darkstrap/mixins";
+
+.post {
+  margin-top: 10px;
+  //compass
+  background: rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2) inset;
+  .post-userbit {
+
+    //compass
+    //background: rgba(0, 0, 0, 0.2);
+    //box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2) inset;
+    margin-right: 2px;
+    padding: 10px 15px;
+
+
+    text-align: center;
+    &>* {
+      margin: 0 auto;
+    }
+  }
+  .post-postbit {
+    //compass
+    //background: rgba(0, 0, 0, 0.1);
+    //box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2) inset;
+    padding: 10px 15px;
+    //border-left: 1px lighten(#2f2f2f, 25%) solid;
+    @include vertical-rule-left-dark;
+
+    .post-meta {
+      text-align: right;
+      color: gray;
+    }
+    .post-created-at {
+    }
+    .post-controls {
+      text-align: right;
+    }
+  }
+}

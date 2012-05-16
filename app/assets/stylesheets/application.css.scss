@@ -1,0 +1,103 @@
+/*
+ *= require_self
+ OFFequire_tree .
+*/
+
+@import "compass";
+$gridGutterWidth: 0;
+//$linkColor: #08c;
+$linkColor: #049cdb;
+$baseFontSize: 16px;
+$baseLineHeight: 20px;
+$linkColorHover: lighten($linkColor, 15%);
+
+//from cyborg
+$inputBackground:               #ccc;
+$inputBorder:                   #bbb;
+$inputBorderRadius:             3px;
+$formActionsBackground:         transparent;
+
+@import "bootstrap";
+@import "posts";
+@import "topics";
+@import "forums";
+@import "users";
+@import "darkstrap/darkstrap";
+
+//@import "compass/typography/text/force-wrap";
+//.topic-title {
+  //@include force-wrap;
+//}
+
+.topic-view-controls {
+  margin-top: 10px;
+}
+
+.navbar .brand {
+  font-size: 26px;
+  padding-bottom: 6px;
+  font-family: 'Oleo Script', cursive;
+  font-weight: 200;
+  //color: #ff8a8a;
+}
+.brand {
+  font-family: 'Oleo Script', cursive;
+  font-weight: 100;
+}
+
+//.page-header,
+//#forum-tabs {
+  ////margin: 10px 0;
+  //font-family: "Museo Sans", "museosans-web", serif;
+  //font-family: MuseoSlab-500;
+  //font-weight: 200;
+  //font-style: normal;
+//}
+.navbar-signup {
+  margin-right: 10px;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  vertical-align: baseline;
+}
+
+label {
+  color: #c6c6c6;
+}
+input,
+textarea{
+  background: #ccc;
+  color: #000;
+}
+
+.form-post,
+.form-topic {
+  input[type="text"],
+  textarea{
+    //background: #ccc;
+    //color: #000;
+    width: 100%;
+  }
+}
+
+footer {
+  margin-top: 100px;
+}
+
+// Compass theme
+body {
+  background: #2f2f2f;
+  color: #c6c6c6;
+}
+.page-header {
+  border-bottom: 1px solid #121212;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.07);
+}
+h1 {
+  color: white;
+}
+.table tbody tr:hover td, .table tbody tr:hover th {
+    background: transparent;
+}
+
+@import "bootstrap-responsive";
