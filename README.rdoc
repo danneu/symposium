@@ -3,3 +3,12 @@
 A simple, dark forum built with Rails 3.2.
 
 Live Demo: link:http://agathon.herokuapp.com
+
+The darkness is provided by my {Darkstrap theme}[http://danneu.com/posts/4-darkstrap-css-a-dark-theme-for-twitter-bootstrap-2] for Twitter Bootstrap 2.
+
+Other stuff I use:
+
+* Devise for authentication
+* CanCan for authorization
+* bb-ruby for BBCode->HTML post formatting
+* Compass and Twitter Bootstrap for styling/design
